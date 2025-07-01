@@ -55,7 +55,7 @@ body {
 .nav-brand {
   font-size: 24px;
   font-weight: 600;
-  color: #e63946;
+  color: rgb(255, 0, 0);
   line-height: 20px;
   font-family: ;
 }
@@ -86,7 +86,7 @@ body {
 }
 
 .navbar-menu a:hover {
-  color: #e63946;
+  color: rgb(255, 0, 0);
 }
 .dropdown {
   position: relative;
@@ -121,15 +121,15 @@ body {
 
 .dropdown-content li a:hover {
   background-color: #f9f9f9;
-  color: #e63946;
+  color: rgb(255, 0, 0);
 }
 
 /* Icons (Cart + Profile) */
 .ordernow{
-  background-color: #e63946;
+  background-color: rgb(255, 0, 0);
   color: #ffffff;
   padding:  8px 12px;
-  border-radius: 4px;
+  border-radius: 2rem;
   border: none;
   outline: none;
   cursor: pointer;
