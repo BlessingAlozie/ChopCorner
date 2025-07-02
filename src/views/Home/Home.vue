@@ -1,8 +1,5 @@
 <template>
   <!--
-  Navbar (done)
-
-Hero Section → with "Order Now", "Reserve"
 
 Featured Dishes
 
@@ -38,12 +35,65 @@ Footer -->
       <button class="ordernow">Order Now</button>
     </div>
   </div>
-  
+  <div class="category-section">
+    <h1>Our Services</h1>
+    <div class="divider-with-icon">
+      <div class="divider-line"></div>
+      <img src="/public/dish.png" class="divider-icon" alt="Dish" />
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="category-wrapper">
+      <!-- <h1>Our Services</h1> -->
+      <div class="category">
+        <div class="breakfast">
+          <img src="" alt="">
+        </div>
+        <div class="breakfast-content">
+          <h3>Breakfast</h3>
+        </div>
+      </div>
+      <div class="category">
+        <div class="lunch"> </div>
+        <div class="breakfast-content">
+          <h3>Lunch</h3>
+        </div>
+      </div>
+      <div class="category">
+        <div class="catering-services"> </div>
+        <div class="breakfast-content">
+          <h3>Catering</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Dishes Section -->
+  <div class="featured-dishes-section">
+    <h2>Featured Dishes</h2>
+    <div class="featured-dishes-wrapper">
+      <div class="dish-card">
+        <img src="/public/user.png" alt="Jollof Rice" />
+        <h3>Jollof Rice</h3>
+        <p>Classic West African rice dish, served with grilled chicken and plantains.</p>
+      </div>
+      <div class="dish-card">
+        <img src="/public/hero-image.png" alt="Breakfast Platter" />
+        <h3>Breakfast Platter</h3>
+        <p>Eggs, sausage, yam, and veggies for a perfect start to your day.</p>
+      </div>
+      <div class="dish-card">
+        <img src="/public/hero-image.png" alt="Party Tray" />
+        <h3>Party Tray</h3>
+        <p>Perfect for groups—assorted meals and sides for every occasion.</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style>
 /* import instrument serif for my heading */
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
@@ -52,9 +102,10 @@ body {
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  background-color: #000000;
+  /* background-color: #000000; */
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
 .hero-video {
   position: relative;
   width: 100%;
@@ -65,6 +116,7 @@ body {
   justify-content: center;
   align-content: center;
 }
+
 .hero-bg-video {
   position: absolute;
   top: 0;
@@ -75,6 +127,7 @@ body {
   z-index: 1;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
+
 .hero-video::before {
   content: '';
   position: absolute;
@@ -85,6 +138,7 @@ body {
   background: rgba(0, 0, 0, 0.9);
   z-index: 1;
 }
+
 .hero-text {
   position: relative;
   z-index: 2;
@@ -94,7 +148,8 @@ body {
   max-width: 800px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Add this line */
+  align-items: center;
+  /* Add this line */
   margin-top: 50px;
 }
 
@@ -102,18 +157,20 @@ body {
   font-size: 4.5rem;
   margin-bottom: 0;
   padding: 10px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   line-height: 3rem;
 }
+
 .hero-text p {
   font-size: 16px;
-  font-family:  Arial;
+  font-family: Arial;
   max-width: 750px;
   text-align: center;
   padding-top: 20px;
   font-weight: 500;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
+
 .hero-text .ordernow {
   background: rgb(255, 0, 0);
   color: #fff;
@@ -125,9 +182,118 @@ body {
   font-weight: bold;
   /* box-shadow: 0 2px 8px rgba(255, 152, 0, 0.15); */
   display: block;
-  margin: 1rem auto 0 auto; /* Center horizontally and add top margin */
+  margin: 1rem auto 0 auto;
+  /* Center horizontally and add top margin */
 }
+
 .hero-text .ordernow:hover {
   background: rgb(212, 29, 29);
+}
+
+/* Category section */
+.category-section {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.category-section h1 {
+  font-size: 35px;
+}
+
+.category-wrapper {
+  width: 90%;
+  justify-content: center;
+  display: flex;
+  margin: auto;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.category {
+  width: 33%;
+  height: 47vh;
+  margin: 0 auto;
+  display: flex;
+
+}
+
+.breakfast,
+.lunch,
+.catering-services {
+  width: 70%;
+  height: 47vh;
+  /* margin: 20px 0; */
+  background-image: url('/public/breakfast.jpg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  float: left;
+}
+
+.breakfast-content {
+  width: 30%;
+  height: 47vh;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  float: left;
+  text-align: right;
+  padding: 0 20px;
+}
+
+.lunch {
+  background-image: url('/public/lunch.jpg');
+}
+
+.catering-services {
+  background-image: url('/public/catering.jpg');
+}
+
+.breakfast-content h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  /* Adjust width as needed */
+  height: 3px;
+  /* Adjust thickness as needed */
+  background: #ff0000;
+  /* Choose your underline color */
+  margin-top: 8px;
+  /* Space between text and underline */
+  border-radius: 2px;
+  margin-left: auto;
+  /* For right alignment */
+  margin-right: 0;
+}
+
+.divider-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 200px;
+  margin-top: -10px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 4px;
+  width: 5px;
+  /* background: linear-gradient(90deg, #ff0000 60%, #000000 100%); */
+  border-radius: 2px;
+  background: #000000;
+  box-shadow: 0 2px 8px rgba(14, 14, 14, 0.15);
+}
+
+.divider-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(14, 14, 14, 0.10);
 }
 </style>
