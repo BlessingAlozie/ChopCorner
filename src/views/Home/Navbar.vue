@@ -125,7 +125,7 @@ body {
 }
 
 /* Icons (Cart + Profile) */
-.ordernow{
+.navbar .ordernow{
   background-color: rgb(255, 0, 0);
   color: #ffffff;
   padding:  8px 12px;

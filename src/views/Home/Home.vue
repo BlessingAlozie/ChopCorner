@@ -47,20 +47,20 @@ Footer -->
       <!-- <h1>Our Services</h1> -->
       <div class="category">
         <div class="breakfast">
-          <img src="" alt="">
+          <img src="" alt="" />
         </div>
         <div class="breakfast-content">
           <h3>Breakfast</h3>
         </div>
       </div>
       <div class="category">
-        <div class="lunch"> </div>
+        <div class="lunch"></div>
         <div class="breakfast-content">
           <h3>Lunch</h3>
         </div>
       </div>
       <div class="category">
-        <div class="catering-services"> </div>
+        <div class="catering-services"></div>
         <div class="breakfast-content">
           <h3>Catering</h3>
         </div>
@@ -69,7 +69,7 @@ Footer -->
   </div>
 
   <!-- Featured Dishes Section -->
-  <div class="featured-dishes-section">
+  <!-- <div class="featured-dishes-section">
     <h2>Featured Dishes</h2>
     <div class="featured-dishes-wrapper">
       <div class="dish-card">
@@ -88,8 +88,86 @@ Footer -->
         <p>Perfect for groups—assorted meals and sides for every occasion.</p>
       </div>
     </div>
+  </div> -->
+
+  <!-- savor the taste of perfection -->
+  <div class="savor-wrapper">
+    <div class="savor-image">
+      <div class="savor-text">
+        <h1><i>Made Fresh, Just for You </i></h1>
+        <p class="savor-subtitle">
+          Experience the joy of every meal, crafted with care, delivered with love.
+        </p>
+        <button class="ordernow">Order Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- signature dishes -->
+  <div class="signature">
+    <div class="signature-text">
+      <img src="/public/dish.png" alt="">
+      <h1>Our Signature dishes</h1>
+      <p class="signature-subtitle">
+        Discover the favorites our customers love, crafted for unforgettable taste and satisfaction.
+      </p>
+      <!-- <div class="menu"></div> -->
+    </div>
+    <div class="food-list">
+      <div class="food-card" v-for="food in foods" :key="food.id">
+        <img :src="food.image" alt="food.name" />
+        <h3>{{ food.name }}</h3>
+        <p>{{ food.desc }}</p>
+        <div class="food-footer">
+          <button class="outline">₦{{ food.price }}</button>
+          <button>Buy Now</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      foods: [
+        {
+          id: 1,
+          name: 'Jollof Rice',
+          desc: 'Classic West African rice dish with grilled chicken and plantains.  start to your day.',
+          price: 2500,
+          image: '/public/lunch.jpg',
+        },
+        {
+          id: 2,
+          name: 'Breakfast Platter',
+          desc: 'Eggs, sausage, yam, and veggies for a perfect start to your day. start to your day.',
+          price: 1800,
+          image: '/public/breakfast.jpg',
+        },
+        {
+          id: 3,
+          name: 'Party Tray',
+          desc: 'Perfect for groups—assorted meals and sides for every occasion. start to your day.',
+          price: 12000,
+          image: '/public/chicken.jpg',
+        },
+        {
+          id: 1,
+          name: 'Jollof Rice',
+          desc: 'Classic West African rice dish with grilled chicken and plantains.  start to your day.',
+          price: 2500,
+          image: '/public/lunch.jpg',
+        },
+      ],
+    }
+  },
+  methods: {
+    foodList() {},
+  },
+}
+</script>
 
 <style>
 /* import instrument serif for my heading */
@@ -170,8 +248,7 @@ body {
   font-weight: 500;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
-
-.hero-text .ordernow {
+.ordernow {
   background: rgb(255, 0, 0);
   color: #fff;
   border: none;
@@ -186,7 +263,7 @@ body {
   /* Center horizontally and add top margin */
 }
 
-.hero-text .ordernow:hover {
+.ordernow:hover {
   background: rgb(212, 29, 29);
 }
 
@@ -216,7 +293,6 @@ body {
   height: 47vh;
   margin: 0 auto;
   display: flex;
-
 }
 
 .breakfast,
@@ -251,7 +327,7 @@ body {
 }
 
 .breakfast-content h3::after {
-  content: "";
+  content: '';
   display: block;
   width: 40px;
   /* Adjust width as needed */
@@ -294,6 +370,137 @@ body {
   object-fit: contain;
   border-radius: 50%;
   padding: 4px;
-  box-shadow: 0 2px 8px rgba(14, 14, 14, 0.10);
+  box-shadow: 0 2px 8px rgba(14, 14, 14, 0.1);
+}
+/* savor section */
+.savor-wrapper {
+  width: 100%;
+  height: 40rem;
+  background-color: #ff1900;
+  scroll-behavior: smooth;
+}
+.savor-image {
+  height: 40rem;
+  background-color: black;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/public/chickenbg2.jpg') no-repeat center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  align-content: center;
+}
+.savor-text {
+  /* max-width: 400px; */
+  /* background-color: red; */
+  margin: auto;
+}
+.savor-image h1 {
+  color: #fff;
+  line-height: 2px;
+  font-family: 'Instrument Serif', serif;
+  font-size: 5rem;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.savor-image p {
+  color: #fff;
+  font-size: 20px;
+  /* padding-top: -30px; */
+  font-family: 'poppins';
+  max-width: 500px;
+  margin: 15px auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* signature */
+.signature {
+  height: 50rem;
+  /* background-color: #b41616; */
+  text-align: center;
+  align-items: center;
+  margin: 50px auto;
+  width: 90%;
+}
+.signature-text{
+  height: 200px;
+  width: 800px;
+  align-content: center;
+  /* background-color: #fff; */
+  margin: auto;
+}
+.signature-text img{
+  width: 30px;
+  height: 30px;
+}
+.food-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 150px;
+}
+.food-card {
+  height: 320px;
+  width: 24%;
+  border-radius: 5px;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.12);
+}
+.food-card img {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  margin-top: -120px;
+  object-fit: fill;
+  border: #000000 10px solid;
+  box-shadow: 4px 4px 28px rgba(97, 96, 96, 0.12);
+}
+.food-card h3 {
+  text-align: center;
+  font-family: 'poppins';
+  padding-top: 10px;
+}
+.food-card p {
+  text-align: center;
+  font-size: 12px;
+  max-width: 200px;
+  margin: 0 auto 30px;
+  color: #605e5e;
+}
+.food-footer {
+
+  height: 45px;
+  display: flex;
+  width: 80%;
+  margin:auto ;
+  justify-content: space-between;
+  gap: 15px;
+}
+.food-footer button,
+.outline {
+  background-color: #ff0000;
+  width: 50%;
+  height: 42px;
+  border-radius: 2rem;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  position: end;
+}
+.food-footer button:hover{
+  background: rgb(212, 29, 29);
+  color: #ffffff;
+}
+.food-footer .outline {
+  width: 38%;
+  border: 1px solid #000000;
+  background-color: transparent;
+  color: #000000;
+}
+.food-footer .outline:hover{
+  background-color: #000000;
+  color: #ffffff;
 }
 </style>
