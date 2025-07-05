@@ -1,21 +1,13 @@
 <template>
-  <!--
+  <!-- what this is about -->
+  <!-- Online food vendor who supplies meals to busy working class individuals, offices and
+ companies, the goal is to help them focus more on thier jobs why we take good care of thier stomach -->
 
-About Section
+  <!-- what will the user journey be like?
+ 1. user login
+ 2. user browse through our website and is interseted because of how clean everything he/she sees,
+ 3.  -->
 
-Customer Testimonials
-
-Operating Hours
-
-Location / Map
-
-Call-to-Action again
-
-Footer -->
-
-  <!-- <div class="body">
-
-  </div> -->
 
   <div class="hero-video">
     <video autoplay muted loop playsinline class="hero-bg-video">
@@ -40,7 +32,6 @@ Footer -->
     </div>
 
     <div class="category-wrapper">
-      <!-- <h1>Our Services</h1> -->
       <div class="category">
         <div class="breakfast">
           <img src="" alt="" />
@@ -148,6 +139,53 @@ Footer -->
       <div class="preorder-image-medium"></div>
     </div>
   </div>
+  <!-- 1. why choose us
+2. FAQ Section -->
+  <!-- filepath: c:\Users\alozi\ChopCorner\src\views\Home\Home.vue -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2>ChopCorner</h2>
+
+        <div class="close-hour">
+          <div class="footer-design-div">
+            <img src="/public/dish.png" alt="ChopCorner Logo" class="footer-logo" />
+          </div>
+          <div class="close-hour-texts">
+            <h4>Opening Hours</h4>
+            <p>Mon - Fri (7:00am - 5:00pm)</p>
+            <p>Sat (8:00am - 5:00pm)</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Pre-Order</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>0812 345 6789</p>
+        <p>hello@chopcorner.com</p>
+        <p>Lagos, Nigeria</p>
+      </div>
+      <div class="footer-links">
+        <h4>Follow Us</h4>
+        <div class="footer-socials-content">
+  <a href="#"><div class="dish"><img src="/public/facebook.png" alt="Facebook" /></div></a>
+  <a href="#"><div class="dish"><img src="/public/instagram.png" alt="Instagram" /></div></a>
+  <a href="#"><div class="dish"><img src="/public/twitter.png" alt="Twitter" /></div></a>
+</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; {{ new Date().getFullYear() }} ChopCorner. All rights reserved.
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -232,7 +270,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background:  linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
 }
 
 .hero-video::before {
@@ -269,14 +307,17 @@ body {
 }
 
 .hero-text p {
-  font-size: 16px;
-  font-family: Arial;
-  max-width: 750px;
+  color: #fff;
+  font-size: 20px;
+  /* padding-top: -30px; */
+  font-family: 'poppins';
+  max-width: 700px;
+  margin: 15px auto;
   text-align: center;
-  padding-top: 20px;
-  font-weight: 500;
+  margin-bottom: 20px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
+
 .ordernow {
   background: rgb(255, 0, 0);
   color: #fff;
@@ -401,6 +442,7 @@ body {
   padding: 4px;
   box-shadow: 0 2px 8px rgba(14, 14, 14, 0.1);
 }
+
 /* savor section */
 .savor-wrapper {
   width: 100%;
@@ -408,6 +450,7 @@ body {
   background-color: #ff1900;
   scroll-behavior: smooth;
 }
+
 .savor-image {
   height: 40rem;
   background-color: black;
@@ -420,11 +463,13 @@ body {
   text-align: center;
   align-content: center;
 }
+
 .savor-text {
   /* max-width: 400px; */
   /* background-color: red; */
   margin: auto;
 }
+
 .savor-image h1 {
   color: #fff;
   line-height: 2px;
@@ -434,6 +479,7 @@ body {
   font-weight: 700;
   margin-bottom: 0;
 }
+
 .savor-image p {
   color: #fff;
   font-size: 20px;
@@ -444,6 +490,7 @@ body {
   text-align: center;
   margin-bottom: 20px;
 }
+
 /* signature */
 .signature {
   height: 44rem;
@@ -453,6 +500,7 @@ body {
   margin: 50px auto;
   width: 90%;
 }
+
 .signature-text {
   height: 200px;
   width: 800px;
@@ -460,10 +508,12 @@ body {
 
   margin: auto;
 }
+
 .signature-text img {
   width: 30px;
   height: 30px;
 }
+
 .food-list {
   width: 100%;
   display: flex;
@@ -471,12 +521,14 @@ body {
   gap: 35px;
   margin-top: 150px;
 }
+
 .food-card {
   height: 320px;
   width: 24%;
   border-radius: 5px;
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.12);
 }
+
 .food-card img {
   width: 190px;
   height: 190px;
@@ -486,11 +538,13 @@ body {
   border: #000000 10px solid;
   box-shadow: 4px 4px 28px rgba(97, 96, 96, 0.12);
 }
+
 .food-card h3 {
   text-align: center;
   font-family: 'poppins';
   padding-top: 10px;
 }
+
 .food-card p {
   text-align: center;
   font-size: 12px;
@@ -498,6 +552,7 @@ body {
   margin: 0 auto 30px;
   color: #605e5e;
 }
+
 .food-footer {
   height: 45px;
   display: flex;
@@ -506,6 +561,7 @@ body {
   justify-content: space-between;
   gap: 15px;
 }
+
 .food-footer button,
 .outline {
   background-color: #ff0000;
@@ -517,16 +573,19 @@ body {
   outline: none;
   position: end;
 }
+
 .food-footer button:hover {
   background: rgb(212, 29, 29);
   color: #ffffff;
 }
+
 .food-footer .outline {
   width: 38%;
   border: 1px solid #000000;
   background-color: transparent;
   color: #000000;
 }
+
 .food-footer .outline:hover {
   background-color: #000000;
   color: #ffffff;
@@ -541,6 +600,7 @@ body {
   display: flex;
   margin-bottom: 60px;
 }
+
 .preorder-form {
   width: 30%;
   background-color: #000;
@@ -570,6 +630,7 @@ body {
   margin-bottom: 0.5rem;
   color: #fff;
 }
+
 .preorder-form input,
 .preorder-form select,
 .preorder-form textarea {
@@ -585,6 +646,7 @@ body {
   outline: none;
   appearance: none;
 }
+
 .preorder-form textarea {
   height: 110px;
 }
@@ -604,6 +666,7 @@ body {
   background-position: right 1rem center;
   background-size: 1.2em;
 }
+
 .preorder-form button {
   background: #ff1900;
   color: #fff;
@@ -620,6 +683,7 @@ body {
 .preorder-form button:hover {
   background: #d41d1d;
 }
+
 /* .preorder-image {
   background-image: url('/public/chickenbg2.jpg');
   width: 50%;
@@ -657,6 +721,7 @@ body {
   gap: 1.5rem;
   width: 70%;
 }
+
 .preorder-image,
 .preorder-image-small,
 .preorder-image-medium {
@@ -665,12 +730,14 @@ body {
   background-position: center;
   border-radius: 25px;
 }
+
 .preorder-image {
   grid-row: 1 / span 2;
   grid-column: 1 / 2;
   min-height: 50rem;
   background-image: url('/public/delivery-man.jpg');
 }
+
 /*
 .preorder-image-small {
   grid-row: 1 / 2;
@@ -678,4 +745,134 @@ body {
   min-height: 195px;
   background-image: url('/public/breakfast.jpg');
 } */
+
+.main-footer {
+  background: #181818;
+  color: #fff;
+  padding: 3rem 0 1rem 0;
+  margin-top: 5rem;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  flex: 1;
+  min-width: 400px;
+  text-align: left;
+}
+.footer-brand h2 {
+  margin-bottom: 1.5rem;
+  /* background-color: red; */
+}
+
+.close-hour {
+  display: flex;
+  color: #ffffff;
+  gap: 15px;
+  padding-top: 1px;
+}
+
+.footer-design-div {
+  height: 90px;
+  width: 90px;
+  border-radius: 8px;
+  align-content: center;
+  text-align: center;
+  background-color: #ffffff;
+}
+.footer-design-div img {
+  margin: auto;
+  width: 40px;
+  height: 40px;
+}
+.close-hour-texts {
+  align-content: start;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2px;
+  text-align: start;
+  height: 90px;
+}
+
+.close-hour-texts h4 {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #ff1900;
+  margin-bottom: 19px;
+}
+.footer-links,
+.footer-contact {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  margin-bottom: 0.7rem;
+  color: #ff1900;
+  font-size: 1.1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #ff1900;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: #aaa;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}
+.footer-socials-content{
+  display: flex;
+  gap: 10px;
+}
+.footer-socials-content .dish{
+ height: 35px;
+ display: flex;
+  width: 35px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-socials-content .dish img{
+  height: 20px;
+  width: 20px;
+text-align: center;
+}
+.footer-socials-content .dish:hover{
+  background: #ff1900;
+  color: #ffffff !important;
+}
+
 </style>
