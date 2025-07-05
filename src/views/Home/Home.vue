@@ -1,10 +1,6 @@
 <template>
   <!--
 
-Featured Dishes
-
-Meal Planner / Pre-Order
-
 About Section
 
 Customer Testimonials
@@ -67,29 +63,6 @@ Footer -->
       </div>
     </div>
   </div>
-
-  <!-- Featured Dishes Section -->
-  <!-- <div class="featured-dishes-section">
-    <h2>Featured Dishes</h2>
-    <div class="featured-dishes-wrapper">
-      <div class="dish-card">
-        <img src="/public/user.png" alt="Jollof Rice" />
-        <h3>Jollof Rice</h3>
-        <p>Classic West African rice dish, served with grilled chicken and plantains.</p>
-      </div>
-      <div class="dish-card">
-        <img src="/public/hero-image.png" alt="Breakfast Platter" />
-        <h3>Breakfast Platter</h3>
-        <p>Eggs, sausage, yam, and veggies for a perfect start to your day.</p>
-      </div>
-      <div class="dish-card">
-        <img src="/public/hero-image.png" alt="Party Tray" />
-        <h3>Party Tray</h3>
-        <p>Perfect for groups—assorted meals and sides for every occasion.</p>
-      </div>
-    </div>
-  </div> -->
-
   <!-- savor the taste of perfection -->
   <div class="savor-wrapper">
     <div class="savor-image">
@@ -106,7 +79,7 @@ Footer -->
   <!-- signature dishes -->
   <div class="signature">
     <div class="signature-text">
-      <img src="/public/dish.png" alt="">
+      <img src="/public/dish.png" alt="" />
       <h1>Our Signature dishes</h1>
       <p class="signature-subtitle">
         Discover the favorites our customers love, crafted for unforgettable taste and satisfaction.
@@ -123,6 +96,56 @@ Footer -->
           <button>Buy Now</button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- preorder section -->
+  <div class="preorder-section">
+    <div class="preorder-form">
+      <form @submit.prevent="submitPreorder">
+        <h2>Pre-Order Your Meal</h2>
+        <!-- <label>
+          Select Meal:
+          <select v-model="preorder.meal" required >
+            <option disabled value="">Choose a meal</option>
+            <option v-for="food in foods" :key="food.id" :value="food.name">{{ food.name }}</option>
+          </select>
+        </label> -->
+        <label>
+          Your Name:
+          <input type="text" v-model="preorder.name" required placeholder="Enter your name" />
+        </label>
+        <label>
+          Delivery Date:
+          <input type="date" v-model="preorder.date" required />
+        </label>
+        <label>
+          Delivery Phone Number:
+          <input type="tel" placeholder="eg. 08123456678" v-model="preorder.phone" required />
+        </label>
+        <label>
+          Delivery Address:
+          <input
+            type="text"
+            placeholder="eg. N0 3 oluyn street ikeja lagos state"
+            v-model="preorder.adddress"
+            required
+          />
+        </label>
+
+        <textarea v-model="preorder.message" placeholder="Enter Message">Message</textarea>
+        <button type="submit">Pre-Order Now</button>
+        <!-- <div v-if="preorderSuccess" class="preorder-success">
+          Thank you, {{ preorder.name }}! Your pre-order for {{ preorder.meal }} on
+          {{ preorder.date }} has been received.
+        </div> -->
+      </form>
+    </div>
+
+    <div class="preorder-image-grid">
+      <div class="preorder-image"></div>
+      <div class="preorder-image-small"></div>
+      <div class="preorder-image-medium"></div>
     </div>
   </div>
 </template>
@@ -161,6 +184,12 @@ export default {
           image: '/public/lunch.jpg',
         },
       ],
+      preorder: {
+        meal: '',
+        date: '',
+        name: '',
+      },
+      preorderSuccess: false,
     }
   },
   methods: {
@@ -417,21 +446,21 @@ body {
 }
 /* signature */
 .signature {
-  height: 50rem;
-  /* background-color: #b41616; */
+  height: 44rem;
+  /* background-color: #00ff84; */
   text-align: center;
   align-items: center;
   margin: 50px auto;
   width: 90%;
 }
-.signature-text{
+.signature-text {
   height: 200px;
   width: 800px;
   align-content: center;
-  /* background-color: #fff; */
+
   margin: auto;
 }
-.signature-text img{
+.signature-text img {
   width: 30px;
   height: 30px;
 }
@@ -470,11 +499,10 @@ body {
   color: #605e5e;
 }
 .food-footer {
-
   height: 45px;
   display: flex;
   width: 80%;
-  margin:auto ;
+  margin: auto;
   justify-content: space-between;
   gap: 15px;
 }
@@ -489,7 +517,7 @@ body {
   outline: none;
   position: end;
 }
-.food-footer button:hover{
+.food-footer button:hover {
   background: rgb(212, 29, 29);
   color: #ffffff;
 }
@@ -499,8 +527,155 @@ body {
   background-color: transparent;
   color: #000000;
 }
-.food-footer .outline:hover{
+.food-footer .outline:hover {
   background-color: #000000;
   color: #ffffff;
 }
+
+/* preorder section */
+
+.preorder-section {
+  height: 50rem;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  margin-bottom: 60px;
+}
+.preorder-form {
+  width: 30%;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  /* border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px; */
+  gap: 1.5rem;
+}
+
+.preorder-form h2 {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ff1900;
+}
+
+.preorder-form label {
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+.preorder-form input,
+.preorder-form select,
+.preorder-form textarea {
+  width: 88%;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #ff1900;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background: #181818;
+  margin-top: 1rem;
+  color: #fff;
+  outline: none;
+  appearance: none;
+}
+.preorder-form textarea {
+  height: 110px;
+}
+
+.preorder-form input:focus,
+.preorder-form select:focus,
+.preorder-form textarea:focus {
+  border: 1.5px solid #ff1900;
+}
+
+.preorder-form select {
+  width: 99%;
+  padding: 0.8rem 2.5rem 0.8rem 1.5rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='16' height='16' fill='white' xmlns='http://www.w3.org/2000/svg'><path d='M4 6l4 4 4-4'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2em;
+}
+.preorder-form button {
+  background: #ff1900;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+
+.preorder-form button:hover {
+  background: #d41d1d;
+}
+/* .preorder-image {
+  background-image: url('/public/chickenbg2.jpg');
+  width: 50%;
+  height: 50rem !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.preorder-image-small {
+  background-image: url('/public/chickenbg2.jpg');
+  width: 20%;
+  height: 25rem !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.preorder-image-medium {
+  background-image: url('/public/chickenbg2.jpg');
+  width: 20%;
+  height: 25rem !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+} */
+.preorder-image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+  width: 70%;
+}
+.preorder-image,
+.preorder-image-small,
+.preorder-image-medium {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 25px;
+}
+.preorder-image {
+  grid-row: 1 / span 2;
+  grid-column: 1 / 2;
+  min-height: 50rem;
+  background-image: url('/public/delivery-man.jpg');
+}
+/*
+.preorder-image-small {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  min-height: 195px;
+  background-image: url('/public/breakfast.jpg');
+} */
 </style>
